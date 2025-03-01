@@ -22,7 +22,7 @@ public class Record {
     private  User user;
 
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)  // Cascade delete records when a book is deleted
     @JoinColumn(name = "book_id")
     private Book book;
 }

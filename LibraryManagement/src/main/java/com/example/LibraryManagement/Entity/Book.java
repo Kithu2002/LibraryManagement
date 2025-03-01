@@ -9,8 +9,11 @@ import java.util.Set;
 @Data
 @Table(name = "book")
 public class Book {
+
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private int id;
     private String title;
     private String author;
@@ -18,6 +21,7 @@ public class Book {
     private Integer quantity;
     @Column(nullable = false)
     private boolean available  = true;
+
 
 
 }
