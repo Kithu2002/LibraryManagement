@@ -59,14 +59,19 @@ public class RecordService {
 
     }
 
-    public Record returnBook(int bookId) {
-        Record record = recordRepository.findById(bookId).orElseThrow(()->new RuntimeException("Book not found"));
+    public Record returnBook(int recordid) {
+        Record record = recordRepository.findById(recordid)
+                .orElseThrow(() -> new RuntimeException("Record not found"));
+
         Book book = record.getBook();
-        book.setQuantity(book.getQuantity()+1);
+        book.setQuantity(book.getQuantity() + 1);
         book.setAvailable(true);
         bookRepository.save(book);
+
         record.setReturned(true);
         record.setReturnDate(LocalDate.now());
+
         return recordRepository.save(record);
     }
+
 }

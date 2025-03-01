@@ -17,7 +17,7 @@ public class RecordController {
     private RecordService recordService;
 
 
-    @PostMapping("/issuebook/{bookid}")
+    @PostMapping("/issuebook/{bookId}")
     public ResponseEntity<Record> issueBook(@PathVariable int bookId){
         return ResponseEntity.ok(recordService.issueBook(bookId));
 
@@ -25,9 +25,10 @@ public class RecordController {
 
 
     @PostMapping("/returnbook/{recordid}")
-    public  ResponseEntity<Record>returnBook(@PathVariable int bookId){
-        return  ResponseEntity.ok(recordService.returnBook(bookId));
+    public ResponseEntity<Record> returnBook(@PathVariable int recordid) {
+        return ResponseEntity.ok(recordService.returnBook(recordid));
     }
+
 
 
 

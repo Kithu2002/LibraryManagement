@@ -31,7 +31,7 @@ public class BookService {
         book.setTitle(bookDTO.getTitle());
         book.setIsbn(bookDTO.getIsbn());
         book.setQuantity(bookDTO.getQuantity());
-        book.setAvailable(bookDTO.isAvailable());
+        book.setAvailable(true);
 
 
         return bookRepository.save(book);

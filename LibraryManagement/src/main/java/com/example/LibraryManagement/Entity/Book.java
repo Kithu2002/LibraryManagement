@@ -16,7 +16,8 @@ public class Book {
     private String author;
     private String isbn;
     private Integer quantity;
-    private boolean isAvailable;
+    @Column(nullable = false)
+    private boolean available  = true;
 
 
 }
